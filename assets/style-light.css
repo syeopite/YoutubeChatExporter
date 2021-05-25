@@ -1,0 +1,185 @@
+body {
+  background-color: #f9f9f9;
+  font-family: Aria, sans-serif;
+}
+
+p {
+    white-space: nowrap;
+}
+
+br {
+    margin: 1em;
+    display: block;
+}
+
+.message {
+    margin: 1em;
+    display:flex;
+    flex-direction: row;
+    gap: 0.4em;
+}
+
+.message-author {
+    display: flex;
+    gap: 1em;
+}
+
+.message-author > h4 {
+    color: #7e7e7e;
+    text-align: center;
+    display: inline-block;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.message-author > img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.mod {
+    color: #6085F1 !important;
+}
+
+.special_icon {
+    color: #7e7e7e;
+    display: flex;
+    gap:0.2em;
+}
+
+.member {
+    color: #107516 !important;
+}
+
+.special_icon > img {
+  width: 20px !important;
+  height: 20px !important;
+  align-self: center;
+  margin-bottom: 0.3em;
+}
+
+.special_icon > h4 {
+  align-self: center;
+  margin:0;
+}
+
+.date {
+    color: #a0a0a0
+}
+
+.owner {
+    background-color: #FFD600;
+    padding:0.3em;
+    color: black !important;
+}
+
+.message-content {
+    align-self: center;
+}
+
+.new_member, .supersticker {
+    border-radius: 5px;
+    padding: 10px;
+    display: inline-block;
+}
+
+.new_member {
+    background: #0F9D58;
+}
+
+.cover_containers {
+  display: flex;
+  gap: 10px
+}
+
+.supersticker {
+  padding: 15px;
+}
+
+.cover_containers > img {
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+}
+
+.container_data {
+    display:flex;
+    flex-direction: column;
+}
+
+.container_data > p {
+    margin-top: -15px;
+    margin-bottom: auto;
+    color: #AFDEC7;
+    font-weight: bold;
+}
+
+.container_data > .container-author > .special_icon > h4 {
+    color: #F4FAF7;
+}
+
+.container_data > .container-author > .special_icon > .date {
+    color: #DDD;
+    margin-left: 5px;
+}
+
+/* Supersticker exclusives */
+/* The first image within the cover container's author area should be the author pfp */
+.supersticker > .cover_containers > img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    bottom: 6px;
+}
+
+.supersticker > .cover_containers > .container_data {
+    flex-direction: row;
+    gap: 25px;
+}
+
+.supersticker > .cover_containers > .container_data > .container-author > .special_icon > .date {
+    margin: 0;
+    margin-left: 5px;
+}
+
+.supersticker > .cover_containers > .container_data > .container-author > p {
+    margin-top: -19px;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.header_container {
+    display:flex;
+    flex-direction: row;
+    border-radius: 5px 5px 0px 0px;
+    padding: 10px;
+    gap: 15px;
+}
+
+.superchat {
+    display: inline-flex;
+    flex-direction: column
+}
+
+.superchat > .header_container > img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.superchat > .header_container > .header_data > .container-author > .special_icon > .date {
+    margin: 0;
+    margin-left: 5px;
+}
+
+.superchat > .header_container > .header_data > .container-author > p {
+    margin-top: -19px;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.body_container {
+    border-radius: 0px 0px 5px 5px;
+    padding: 0 20px 0 20px;
+}
