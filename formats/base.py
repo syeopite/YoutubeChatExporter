@@ -43,8 +43,24 @@ class BaseExporter:
     async def _process_message_type(self, msg):
         pass
 
+    async def export(self, ext):
+        """Begins the exportation process of livechat messages into the selected format."""
+        partition_counter = 0
+        while not self.completion_event.is_set():
+            if 1 < self.arguments.split:
+                doc = await self.create_format()
+
+                if self.arguments.split == self.processed_message_count:
+                    partition_counter += 1
+                    self.processed_message_count = 0
+
+                await self._write_to_file(doc, name=f"{partition_counter}.{ext}")
+            else:
+                doc = await self.create_format()
+                await self._write_to_file(doc, name=f"exported.{ext}")
+
     async def _write_to_file(self, doc, name):
         path = f"{self.output_directory}/{name}"
 
-        async with aiofiles.open(path, mode='w') as html_file:
-            await html_file.write(str(doc))
+        async with aiofiles.open(path, mode='w') as file:
+            await file.write(str(doc))

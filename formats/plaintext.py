@@ -39,19 +39,6 @@ class PlainText(BaseExporter):
 
         return message_to_add
 
-    async def export(self):
+    async def export(self, *_):
         """Begins the exportation process of livechat messages into the plaintext format."""
-
-        partition_counter = 0
-        while not self.completion_event.is_set():
-            if 1 < self.arguments.split:
-                doc = await self.create_format()
-
-                if self.arguments.split == self.processed_message_count:
-                    partition_counter += 1
-                    self.processed_message_count = 0
-
-                await self._write_to_file(doc, name=f"{partition_counter}.txt")
-            else:
-                doc = await self.create_format()
-                await self._write_to_file(doc, name=f"exported.txt")
+        await super().export("txt")

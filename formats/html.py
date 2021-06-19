@@ -236,7 +236,7 @@ class HtmlFormat(BaseExporter):
 
         self.processed_message_count += 1
 
-    async def export(self):
+    async def export(self, *_):
         """Begins the exportation process of livechat messages into the HTML format."""
         partition_counter = 0
         while not self.completion_event.is_set():
