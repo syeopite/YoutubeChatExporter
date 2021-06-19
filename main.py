@@ -29,13 +29,6 @@ async def main(arguments):
         await backend.begin()
 
 
-def validate_threads(num):
-    num = int(num)
-    if num < 1:
-        raise argparse.ArgumentTypeError(f"{num} threads is too low. I need at least one thread to use!")
-    return num
-
-
 def validate_partitions(num):
     num = int(num)
     if num < 1:
@@ -73,14 +66,6 @@ if __name__ == "__main__":
         default="DarkHtml",
         help="format to archive chat as. Acceptable values are: DarkHtml (default),"
              " LightHtml, PlainText"
-    )
-
-    arg_parser.add_argument(
-        "-t", "--threads",
-        type=int,
-        metavar="threads",
-        default=1,
-        help="Number of threads to use when downloading images."
     )
 
     arg_parser.add_argument(
