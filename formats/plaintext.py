@@ -8,7 +8,6 @@ class PlainText(BaseExporter):
 
     async def _process_message_type(self, msg):
         special = []
-        msg = await self.messages.get()
         if msg.is_verified:
             special.append("verified")
         if msg.is_chat_owner:

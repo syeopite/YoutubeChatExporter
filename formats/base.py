@@ -38,6 +38,8 @@ class BaseExporter:
                 accumulator += await self._process_message_type(msg)
             else:
                 await self._process_message_type(msg)
+
+            self.processed_message_count += 1
         return accumulator
 
     async def _process_message_type(self, msg):

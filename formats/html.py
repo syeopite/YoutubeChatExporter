@@ -234,8 +234,6 @@ class HtmlFormat(BaseExporter):
                         tags.h4(f"{msg.author_name}")
                 self.create_p_with_emojis(msg.contents)
 
-        self.processed_message_count += 1
-
     async def export(self, *_):
         """Begins the exportation process of livechat messages into the HTML format."""
         partition_counter = 0
