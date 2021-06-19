@@ -29,5 +29,4 @@ optional arguments:
 * Improve speed
 * Additional backends
 * Verbose mode
-* Add GUI
 * Add more formats
