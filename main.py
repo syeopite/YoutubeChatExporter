@@ -62,10 +62,10 @@ if __name__ == "__main__":
         "-f", "--format",
         type=str,
         metavar="format",
-        choices=["DarkHtml", "LightHtml", "PlainText"],
+        choices=["DarkHtml", "LightHtml", "PlainText", "JSON"],
         default="DarkHtml",
         help="format to archive chat as. Acceptable values are: DarkHtml (default),"
-             " LightHtml, PlainText"
+             " LightHtml, PlainText, JSON"
     )
 
     arg_parser.add_argument(
